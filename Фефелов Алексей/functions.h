@@ -25,4 +25,8 @@ void test();
 **/
 void program(FILE *f1, FILE *f2);
 
+int pr(char *a);
+
+void abr (char *a, FILE *f1);
+
 #endif // FUNCTIONS_H_INCLUDED

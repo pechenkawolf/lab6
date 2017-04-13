@@ -27,15 +27,37 @@ void incert(char *a, char *b, size_t j)
     *(a+j)='\0';
 }
 
+int pr(char *a)
+{
+    if( strlen(a) > 10) return 1;
+    return 0;
+}
+
+void abr (char *a, FILE *f1)
+{
+    int k=strlen(a),j;
+    if(pr(a))
+    {
+        char b[5];
+
+        itoa(k-2, b, 10);
+        incert(a, b, 1);
+        j=strlen(b);
+        a[j+1]=a[k-1];
+        a[j+2]='\0';
+    }
+}
 void program(FILE *f1, FILE *f2)
 {
-    int k;
+    //int k;
     int i=0,j;
     char a[100][100];
-    char b[5];
+    //char b[5];
     while(!feof(f1))
     {
         fscanf (f1,"%s", a[i]);
+        abr(a[i],f1);
+        /*
         k=strlen(a[i]);
         if( k > 10)
         {
@@ -45,6 +67,7 @@ void program(FILE *f1, FILE *f2)
             a[i][j+1]=a[i][k-1];
             a[i][j+2]='\0';
         }
+        */
         ++i;
     }
 
