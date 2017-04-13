@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1492091203 source:d:\Проги\lab 6\main.c
+	<windows.h>
+	<locale.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"functions.h"
+
+1492092774 source:d:\Проги\lab 6\functions.c
+	<windows.h>
+	<locale.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
+1492092774 d:\Проги\lab 6\functions.h
+
