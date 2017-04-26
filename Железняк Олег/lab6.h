@@ -15,7 +15,7 @@ void* readFile(const char *fileName, size_t n);
 /*! \fn char* shorten(const char *s)
     \brief Shortens the string
     \param s Source string
-    \return Returns a pointer to a new line if it is truncated, null pointer otherwise
+    \return Returns a pointer to a new string
 */
 char* shorten(const char *s);
 
