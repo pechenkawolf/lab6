@@ -1,0 +1,5 @@
+apple
+l10n
+tree
+i18n
+a9n
