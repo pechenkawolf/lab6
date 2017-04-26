@@ -53,7 +53,7 @@ char* shorten(const char *s)
 void writeFile(const char *fileName, char (*res)[STR_LEN], size_t n)
 {
     int i;
-    FILE *out = fopen("output.txt", "w");
+    FILE *out = fopen(fileName, "w");
 
     for(i = 0; i < n; ++i)
     {
