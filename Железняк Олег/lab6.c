@@ -47,7 +47,10 @@ char* shorten(const char *s)
         return res;
     }
 
-    return NULL;
+    char *res = malloc(sizeof(char)*(strlen(s) + 1));
+    strcpy(res, s);
+
+    return res;
 }
 
 void writeFile(const char *fileName, char (*res)[STR_LEN], size_t n)
@@ -59,10 +62,8 @@ void writeFile(const char *fileName, char (*res)[STR_LEN], size_t n)
     {
         char *short_str = shorten(res[i]);
 
-        if(short_str)
-            fprintf(out, "%s\n", short_str);
-        else
-            fprintf(out, "%s\n", res[i]);
+        fprintf(out, "%s\n", short_str);
+        free(short_str);
     }
 
     fclose(out);
@@ -79,24 +80,10 @@ void testShorten()
     {
         char *tmp = shorten(in[i]);
 
-        if(tmp == NULL)
-        {
-            if(strcmp(in[i], out[i]) != 0)
-            {
-                printf("Test #%d failed!\n", i);
-                return;
-            }
-        }
-        else
-        {
-            if(strcmp(tmp, out[i]) != 0)
-            {
-                printf("Test #%d failed!\n", i);
-                return;
-            }
+        if(strcmp(tmp, out[i]) != 0)
+            printf("Test #%d failed!\n", i);
 
-            free(tmp);
-        }
+        free(tmp);
     }
 
     printf("All tests are successfully passed!\n");
