@@ -14,18 +14,18 @@ int main()
     char fileName[STR_LEN];
     char (*res)[STR_LEN];
 
-    printf("\n\nВведите количество строк: ");
+    printf("\n\nР’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє: ");
     scanf("%d", &n);
 
-    printf("Введите имя входного файла: ");
+    printf("Р’РІРµРґРёС‚Рµ РёРјСЏ РІС…РѕРґРЅРѕРіРѕ С„Р°Р№Р»Р°: ");
     scanf("%s", fileName);
 
     res = readFile(fileName, n);
 
-    printf("Введите имя выходного файла: ");
+    printf("Р’РІРµРґРёС‚Рµ РёРјСЏ РІС‹С…РѕРґРЅРѕРіРѕ С„Р°Р№Р»Р°: ");
     scanf("%s", fileName);
 
-    writeFile("output.txt", res, n);
+    writeFile(fileName, res, n);
 
     free(res);
     return 0;
